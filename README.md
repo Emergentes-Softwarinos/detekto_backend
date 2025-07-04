@@ -1,0 +1,2 @@
+# Detekto Platform
+
