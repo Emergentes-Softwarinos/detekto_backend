@@ -23,7 +23,14 @@ public class UserRegisteredEventHandler {
     public void handleUserRegisteredEvent(UserRegisteredEvent event) {
         // crea un nuevo StoreVendor si el usuario se ha registrado correctamente
         try {
-            CreateStoreVendorCommand createStoreVendorCommand = new CreateStoreVendorCommand(event.getFullName(), event.getEmail(), "", event.getPassword());
+            CreateStoreVendorCommand createStoreVendorCommand = new CreateStoreVendorCommand(
+                    event.getFullName(),
+                    event.getEmail(),
+                    "",  // Puedes ajustar esto según tus necesidades
+                    "",         // Género por defecto
+                    "",                     // Edad por defecto
+                    event.getPassword()      // Usa la contraseña proporcionada en el evento
+            );
             Long storeVendorId = storeVendorCommandService.createStoreVendor(createStoreVendorCommand);  // Obtén el ID del storeVendor recién creado
 
             // Una vez que se crea el storeVendor, publicar un nuevo evento que BC Crops pueda escuchar

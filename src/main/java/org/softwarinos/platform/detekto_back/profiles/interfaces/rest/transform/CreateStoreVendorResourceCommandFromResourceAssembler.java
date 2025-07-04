@@ -8,7 +8,9 @@ public class CreateStoreVendorResourceCommandFromResourceAssembler {
         return new CreateStoreVendorCommand(
                 resource.username(),
                 resource.email(),
-                resource.phoneNumber(),
+                resource.description(),
+                resource.gender(),
+                resource.age(),
                 resource.password()
         );
     }

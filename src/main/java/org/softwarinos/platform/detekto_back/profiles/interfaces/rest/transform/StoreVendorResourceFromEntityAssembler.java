@@ -9,7 +9,9 @@ public class StoreVendorResourceFromEntityAssembler {
                 storeVendor.getId(),
                 storeVendor.getUsername(),
                 storeVendor.getEmail(),
-                storeVendor.getPhoneNumber(),
+                storeVendor.getDescription(),
+                storeVendor.getGender(),
+                storeVendor.getAge(),
                 storeVendor.getPassword(),
                 storeVendor.getStoreVendorImage() != null ? storeVendor.getStoreVendorImage().getImageUrl() : null // Aquí evitamos el NullPointerException
 

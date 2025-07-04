@@ -56,11 +56,15 @@ public class StoreVendorCommandServiceImpl implements StoreVendorCommandService 
         if (command.username() != null && !command.username().isEmpty()) {
             storeVendor.setUsername(command.username());
         }
-
-        if (command.phoneNumber() != null && !command.phoneNumber().isEmpty()) {
-            storeVendor.setPhoneNumber(command.phoneNumber());
+        if (command.description() != null && !command.description().isEmpty()) {
+            storeVendor.setDescription(command.description());
         }
-
+        if (command.gender() != null && !command.gender().isEmpty()) {
+            storeVendor.setGender(command.gender());
+        }
+        if (command.age() != null && !command.age().isEmpty()) {
+            storeVendor.setAge(command.age());
+        }
         storeVendorRepository.save(storeVendor);
 
         return Optional.of(storeVendor);

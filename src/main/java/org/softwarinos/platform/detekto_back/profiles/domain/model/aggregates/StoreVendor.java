@@ -32,7 +32,11 @@ public class StoreVendor extends AuditableAbstractAggregateRoot<StoreVendor> {
 
     private String email;
 
-    private String phoneNumber;
+    private String description;
+
+    private String gender;
+
+    private String age;
 
     private String password;
 
@@ -43,7 +47,9 @@ public class StoreVendor extends AuditableAbstractAggregateRoot<StoreVendor> {
     public StoreVendor(CreateStoreVendorCommand command) {
         this.username = command.username();
         this.email = command.email();
-        this.phoneNumber = command.phoneNumber();
+        this.description = command.description();
+        this.gender = command.gender();
+        this.age = command.age();
         this.password = command.password();
     }
 

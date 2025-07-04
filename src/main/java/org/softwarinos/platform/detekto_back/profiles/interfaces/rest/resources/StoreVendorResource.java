@@ -4,7 +4,9 @@ public record StoreVendorResource(
         Long id,
         String username,
         String email,
-        String phoneNumber,
+        String description,
+        String gender,
+        String age,
         String password,
         String imageUrl
 ) {
