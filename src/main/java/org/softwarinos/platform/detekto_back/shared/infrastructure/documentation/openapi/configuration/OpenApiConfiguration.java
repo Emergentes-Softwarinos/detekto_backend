@@ -1,5 +1,6 @@
 package org.softwarinos.platform.detekto_back.shared.infrastructure.documentation.openapi.configuration;
 
+import io.swagger.v3.oas.models.servers.Server;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -9,6 +10,8 @@ import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 @Configuration
 public class OpenApiConfiguration {
@@ -25,7 +28,12 @@ public class OpenApiConfiguration {
                                 .url("https://www.apache.org/licenses/LICENSE-2.0.html")))
                 .externalDocs(new ExternalDocumentation()
                         .description("Detekto Documentation")
-                        .url("https://github.com/IoT-Solutions-SW71-Grupo-4/HidroBots-Report"));
+                        .url("https://github.com/IoT-Solutions-SW71-Grupo-4/HidroBots-Report"))
+                .servers(List.of(
+                new Server().url("http://localhost:8080").description("Development Server"),
+                new Server().url("https://detektobackend-production.up.railway.app").description("production/ Server")
+
+        ));
 
         // Add security scheme
         final String securitySchemeName = "bearerAuth";
